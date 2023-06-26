@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:Customer="http://www.tibco.com/Customer/" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:axis2="http://xsd.tns.tibco.com/bw/models/binding/soap/axis2" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_KBZEgBP0Ee6ZYdgQgyWg7Q" targetNamespace="http://tns.tibco.com/bw/composite/listOfSoapServices" name="listOfSoapServices" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_hT9qxBQCEe6wo6DO5a4uxg" name="Customer" promote="ComponentCustomer/Customer">
+    <sca:interface.wsdl xmi:id="_hT9qyBQCEe6wo6DO5a4uxg" interface="http://www.tibco.com/Customer/#wsdl.interface(Customer)" scaext:wsdlLocation="../Service%20Descriptors/Customer.wsdl"/>
+    <scaext:binding xsi:type="axis2:SOAPServiceBinding" xmi:id="_hUHbwBQCEe6wo6DO5a4uxg" name="SOAPServiceBinding" targetNamespace="http://www.tibco.com/22a6dd1402d84417bc7c14eec4291222/SOAPServiceBinding" portTypeQName="Customer:Customer" transportBindingType="HTTP" attachmentStyle="SwA" modelVersion="1.2.0" portTypeWSDLLocation="platform:/resource/listOfSoapServices/Service%20Descriptors/Customer.wsdl">
+      <bindingType xmi:id="_hUHbwRQCEe6wo6DO5a4uxg"/>
+      <inboundConfiguration xsi:type="axis2:HttpTransportConfiguration" xmi:id="_DPpQoBQEEe6wo6DO5a4uxg" endpointURI="/SOAPServiceBinding/customer/" httpConnector="listofsoapservices.HTTPConnectorResource"/>
+      <operationConfiguration xmi:id="_hUHbwhQCEe6wo6DO5a4uxg" operationName="AddUser" action="AddUser" actionNeeded="true">
+        <bindingType xmi:id="_hUHbwxQCEe6wo6DO5a4uxg"/>
+        <messageConfiguration xmi:id="_hUHbxBQCEe6wo6DO5a4uxg" messageQName="Customer:AddUserRequest" wsdlLocation="platform:/resource/listOfSoapServices/Service%20Descriptors/Customer.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_hUHbxRQCEe6wo6DO5a4uxg" partName="parameters" partElementName="Customer:AddUser"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_hUHbxhQCEe6wo6DO5a4uxg" messageQName="Customer:AddUserResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/listOfSoapServices/Service%20Descriptors/Customer.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_hUHbxxQCEe6wo6DO5a4uxg" partName="parameters" partElementName="Customer:AddUserResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_hUHbzhQCEe6wo6DO5a4uxg">
+          <inputMapping xmi:id="_hUHbzxQCEe6wo6DO5a4uxg"/>
+          <outputMapping xmi:id="_hUHb0BQCEe6wo6DO5a4uxg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+      <operationConfiguration xmi:id="_hUHbyBQCEe6wo6DO5a4uxg" operationName="GetAllUser" action="GetAllUser" actionNeeded="true">
+        <bindingType xmi:id="_hUHbyRQCEe6wo6DO5a4uxg"/>
+        <messageConfiguration xmi:id="_hUHbyhQCEe6wo6DO5a4uxg" messageQName="Customer:GetAllUserRequest" wsdlLocation="platform:/resource/listOfSoapServices/Service%20Descriptors/Customer.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_hUHbyxQCEe6wo6DO5a4uxg" partName="parameters" partElementName="Customer:GetAllUser"/>
+        </messageConfiguration>
+        <messageConfiguration xmi:id="_hUHbzBQCEe6wo6DO5a4uxg" messageQName="Customer:GetAllUserResponse" messageDirection="OUTPUT" wsdlLocation="platform:/resource/listOfSoapServices/Service%20Descriptors/Customer.wsdl">
+          <messagePartConfigurations xsi:type="axis2:BodyPartConfiguration" xmi:id="_hUHbzRQCEe6wo6DO5a4uxg" partName="parameters" partElementName="Customer:GetAllUserResponse"/>
+        </messageConfiguration>
+        <context xmi:id="_hUHb0RQCEe6wo6DO5a4uxg">
+          <inputMapping xmi:id="_hUHb0hQCEe6wo6DO5a4uxg"/>
+          <outputMapping xmi:id="_hUHb0xQCEe6wo6DO5a4uxg" direction="OUTPUT"/>
+        </context>
+      </operationConfiguration>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_hUHb1BQCEe6wo6DO5a4uxg" bindingName="SOAPServiceBinding"/>
+  </sca:service>
+  <sca:property xmi:id="_KZBhYBP0Ee6ZYdgQgyWg7Q" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZHoABP0Ee6ZYdgQgyWg7Q" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZNHkBP0Ee6ZYdgQgyWg7Q" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZNHkRP0Ee6ZYdgQgyWg7Q" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZW4kBP0Ee6ZYdgQgyWg7Q" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZgpkBP0Ee6ZYdgQgyWg7Q" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZjF0BP0Ee6ZYdgQgyWg7Q" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZmJIBP0Ee6ZYdgQgyWg7Q" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_KZpzgBP0Ee6ZYdgQgyWg7Q" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:component xmi:id="_hT9qwBQCEe6wo6DO5a4uxg" name="ComponentCustomer" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_hT9qwRQCEe6wo6DO5a4uxg" processName="listofsoapservices.Customer"/>
+    <sca:service xmi:id="_hT9qwhQCEe6wo6DO5a4uxg" name="Customer">
+      <sca:interface.wsdl xmi:id="_hT9qwxQCEe6wo6DO5a4uxg" interface="http://www.tibco.com/Customer/#wsdl.interface(Customer)" scaext:wsdlLocation="../Service%20Descriptors/Customer.wsdl"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

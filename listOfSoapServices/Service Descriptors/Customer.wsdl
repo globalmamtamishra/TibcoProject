@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://www.tibco.com/Customer/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Customer" targetNamespace="http://www.tibco.com/Customer/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://www.tibco.com/Customer/">
+      <xsd:element name="AddUser">
+        <xsd:complexType>
+          <xsd:sequence>
+          	<xsd:element name="User_ID" type="xsd:int" />
+          	<xsd:element name="UserName" type="xsd:string"></xsd:element>
+          	<xsd:element name="UserStatus" type="xsd:string"></xsd:element>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="AddUserResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="message" type="xsd:string"/>
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GEtUserById">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="User_Id" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GEtUserByIdResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="UserName" type="xsd:string"></xsd:element>
+      			<xsd:element name="UserStatus" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteUserById">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="User_Id" type="xsd:int"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="DeleteUserByIdResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="Message" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getallUser">
+      	<xsd:complexType>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getallUserResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="out" type="xsd:string"></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllUser">
+      	<xsd:complexType>
+      	</xsd:complexType>
+      </xsd:element>
+      <xsd:element name="GetAllUserResponse">
+      	<xsd:complexType>
+      		<xsd:sequence>
+
+      			<xsd:element name="users" minOccurs="0" maxOccurs="unbounded">
+      				<xsd:complexType>
+      					<xsd:sequence>
+      						<xsd:element name="User_ID"
+      							type="xsd:int">
+      						</xsd:element>
+      						<xsd:element name="UsereNAme"
+      							type="xsd:string">
+      						</xsd:element>
+      						<xsd:element name="UserStatus"
+      							type="xsd:string">
+      						</xsd:element>
+      					</xsd:sequence>
+      				</xsd:complexType></xsd:element>
+      		</xsd:sequence>
+      	</xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="AddUserRequest">
+    <wsdl:part element="tns:AddUser" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="AddUserResponse">
+    <wsdl:part element="tns:AddUserResponse" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="GEtUserByIdRequest">
+  	<wsdl:part name="parameters" element="tns:GEtUserById"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GEtUserByIdResponse">
+  	<wsdl:part name="parameters" element="tns:GEtUserByIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteUserByIdRequest">
+  	<wsdl:part name="parameters" element="tns:DeleteUserById"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="DeleteUserByIdResponse">
+  	<wsdl:part name="parameters" element="tns:DeleteUserByIdResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getallUserRequest">
+  	<wsdl:part name="parameters" element="tns:getallUser"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getallUserResponse">
+  	<wsdl:part name="parameters" element="tns:getallUserResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAllUserRequest">
+  	<wsdl:part name="parameters" element="tns:GetAllUser"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="GetAllUserResponse">
+  	<wsdl:part name="parameters" element="tns:GetAllUserResponse"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Customer">
+    <wsdl:operation name="AddUser">
+      <wsdl:input message="tns:AddUserRequest"/>
+      <wsdl:output message="tns:AddUserResponse"/>
+    </wsdl:operation>
+
+
+
+    <wsdl:operation name="GetAllUser">
+    	<wsdl:input message="tns:GetAllUserRequest"></wsdl:input>
+    	<wsdl:output message="tns:GetAllUserResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CustomerSOAP" type="tns:Customer">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="AddUser">
+      <soap:operation soapAction="http://www.tibco.com/Customer/AddUser"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Customer">
+    <wsdl:port binding="tns:CustomerSOAP" name="CustomerSOAP">
+      <soap:address location="http://www.example.org/"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
